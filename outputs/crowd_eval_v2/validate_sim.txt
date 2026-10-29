@@ -1,0 +1,19 @@
+walkable area 503 m2
+
+=== normal: 45 rollouts in 19s, people 6.0 -> 0.012 /m2 (83.9 m2/p)
+  speed 1 s window mean 1.25 median 1.27 p10 0.90 p90 1.62; > 2 m/s 0.0000
+  max jump per 0.25 s 0.50 m; samples inside raw obstacles 0.0000
+  nn median 6.05 p5 0.92; samples with nn < 0.5 m 0.0000
+  overlapping pairs (< 0.45 m, i.e. > 5 cm interpenetration) per instant: strangers 0.000, same group 0.000
+  stuck 0.009; turn rate median 6.8 p95 57.6 deg/s
+  turn rate while walking > 0.8 m/s: median 6.3 p95 43.8 deg/s
+
+=== rush: 45 rollouts in 114s, people 76.0 -> 0.151 /m2 (6.6 m2/p)
+  speed 1 s window mean 0.97 median 1.03 p10 0.32 p90 1.48; > 2 m/s 0.0028
+  max jump per 0.25 s 0.60 m; samples inside raw obstacles 0.0000
+  nn median 0.87 p5 0.64; samples with nn < 0.5 m 0.0001
+  overlapping pairs (< 0.45 m, i.e. > 5 cm interpenetration) per instant: strangers 0.000, same group 0.000
+  stuck 0.009; turn rate median 17.2 p95 173.2 deg/s
+  turn rate while walking > 0.8 m/s: median 12.1 p95 82.1 deg/s
+normal: heading change per 1 s step (moving > 0.5 m/s) median/p95: old sim 3.6/25.8 deg, new sim 5.5/39.2 deg
+rush: heading change per 1 s step (moving > 0.5 m/s) median/p95: old sim 7.7/36.0 deg, new sim 10.7/49.3 deg

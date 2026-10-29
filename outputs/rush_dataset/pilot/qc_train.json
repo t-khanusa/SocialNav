@@ -1,0 +1,203 @@
+{
+ "split": "train",
+ "episodes": {
+  "all": {
+   "episodes": 36,
+   "people": 46.111111111111114,
+   "success": 0.9444444444444444,
+   "reasons": {
+    "arrived": 34,
+    "stuck": 2,
+    "max_steps": 0
+   },
+   "speed": 0.8947312416030806,
+   "stop_fraction": 0.05321610870254248,
+   "fallback_fraction": 0.06656641674658445,
+   "contacts_per_episode": {
+    "frontal": 1.0555555555555556,
+    "beside_or_behind": 1.2222222222222223,
+    "unseen": 1.8611111111111112
+   },
+   "min_static_clearance": 0.35951852798461914,
+   "people_in_view": 7.694958772274043,
+   "steps": 1208
+  },
+  "normal": {
+   "episodes": 5,
+   "people": 3.6,
+   "success": 1.0,
+   "reasons": {
+    "arrived": 5,
+    "stuck": 0,
+    "max_steps": 0
+   },
+   "speed": 1.0004211630193227,
+   "stop_fraction": 0.0,
+   "fallback_fraction": 0.0,
+   "contacts_per_episode": {
+    "frontal": 0.0,
+    "beside_or_behind": 0.0,
+    "unseen": 0.4
+   },
+   "min_static_clearance": 0.39990127086639404,
+   "people_in_view": 0.743105114481118,
+   "steps": 192
+  },
+  "original": {
+   "episodes": 5,
+   "people": 0.0,
+   "success": 1.0,
+   "reasons": {
+    "arrived": 5,
+    "stuck": 0,
+    "max_steps": 0
+   },
+   "speed": 0.9951744493835379,
+   "stop_fraction": 0.005714285714285714,
+   "fallback_fraction": 0.0,
+   "contacts_per_episode": {
+    "frontal": 0.0,
+    "beside_or_behind": 0.0,
+    "unseen": 0.0
+   },
+   "min_static_clearance": 0.35958296060562134,
+   "people_in_view": 0.0,
+   "steps": 151
+  },
+  "rush 0.00-0.10": {
+   "episodes": 5,
+   "people": 22.2,
+   "success": 1.0,
+   "reasons": {
+    "arrived": 5,
+    "stuck": 0,
+    "max_steps": 0
+   },
+   "speed": 0.9097084598582936,
+   "stop_fraction": 0.06333333333333332,
+   "fallback_fraction": 0.07773279352226721,
+   "contacts_per_episode": {
+    "frontal": 0.6,
+    "beside_or_behind": 1.0,
+    "unseen": 1.6
+   },
+   "min_static_clearance": 0.35951852798461914,
+   "people_in_view": 4.836884168463117,
+   "steps": 122
+  },
+  "rush 0.10-0.17": {
+   "episodes": 10,
+   "people": 49.8,
+   "success": 1.0,
+   "reasons": {
+    "arrived": 10,
+    "stuck": 0,
+    "max_steps": 0
+   },
+   "speed": 0.9137456775787592,
+   "stop_fraction": 0.019735885433260623,
+   "fallback_fraction": 0.05563853739170086,
+   "contacts_per_episode": {
+    "frontal": 0.8,
+    "beside_or_behind": 0.8,
+    "unseen": 2.8
+   },
+   "min_static_clearance": 0.3695800006389618,
+   "people_in_view": 6.564751955750587,
+   "steps": 323
+  },
+  "rush 0.17-0.26": {
+   "episodes": 11,
+   "people": 93.9090909090909,
+   "success": 0.8181818181818182,
+   "reasons": {
+    "arrived": 9,
+    "stuck": 2,
+    "max_steps": 0
+   },
+   "speed": 0.7769406873288672,
+   "stop_fraction": 0.12483481488371163,
+   "fallback_fraction": 0.13194015103169957,
+   "contacts_per_episode": {
+    "frontal": 2.4545454545454546,
+    "beside_or_behind": 2.8181818181818183,
+    "unseen": 2.6363636363636362
+   },
+   "min_static_clearance": 0.35951852798461914,
+   "people_in_view": 16.679186348148953,
+   "steps": 420
+  }
+ },
+ "labels": {
+  "waypoint_step_m": {
+   "max": 1.00002471471289,
+   "mean": 0.8860565520930145,
+   "over_1m": 0
+  },
+  "replan_jitter_m": {
+   "mean": 0.40728767549912986,
+   "p95": 1.5621549000480015
+  },
+  "waypoint_clearance_m": {
+   "min": 0.35951852798461914,
+   "below_robot_clearance": 0,
+   "p5": 0.4096496105194092
+  },
+  "plan_to_seen_people_m": {
+   "samples": 941,
+   "median_by_waypoint": [
+    2.013,
+    1.964,
+    1.948,
+    1.992,
+    2.054
+   ],
+   "below_contact_by_waypoint": [
+    0.0287,
+    0.0287,
+    0.136,
+    0.1477,
+    0.1445
+   ],
+   "below_safe_by_waypoint": [
+    0.051,
+    0.0457,
+    0.1764,
+    0.1849,
+    0.1838
+   ],
+   "ahead_below_contact_by_waypoint": [
+    0.0195,
+    0.0173,
+    0.1105,
+    0.1246,
+    0.1246
+   ]
+  }
+ },
+ "samples": {
+  "split": "train",
+  "sft_records": 1014,
+  "eval_records": 1014,
+  "arrive": 34,
+  "cat_action_target_mismatch": 143,
+  "cat_crossing": 84,
+  "cat_crowd": 282,
+  "cat_other": 532,
+  "cat_person_close_by": 157,
+  "cat_turn": 139,
+  "condition_normal": 192,
+  "condition_original": 151,
+  "condition_rush": 671,
+  "episodes": 36,
+  "fallback_closest_safe": 70,
+  "interaction": 307,
+  "samples_episode_stuck": 2,
+  "samples_ok": 1014,
+  "samples_overlap": 34
+ },
+ "videos": [
+  "../outputs/rush_dataset/pilot/qc_videos/cross1_train_00000.mp4",
+  "../outputs/rush_dataset/pilot/qc_videos/cross1_train_00003.mp4"
+ ]
+}

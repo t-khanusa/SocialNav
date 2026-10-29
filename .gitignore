@@ -188,3 +188,9 @@ cluster.json
 
 # Local debug data
 gyn_utils/sampled_100_debug.jsonl
+# Local data, model weights, papers and run outputs. Selected small results under outputs/
+# are force-added (git add -f), see docs/crowd_rush_hour/README.md.
+/checkpoints/
+/data/
+/papers/
+/outputs/

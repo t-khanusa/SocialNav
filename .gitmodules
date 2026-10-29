@@ -1,0 +1,4 @@
+[submodule "ABot-Navigation"]
+	path = ABot-Navigation
+	url = https://github.com/t-khanusa/ABot-Navigation.git
+	branch = crowd-rush-hour

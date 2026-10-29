@@ -1,0 +1,8 @@
+# Agent config for utils/abotn_agent.py (passed with --agent-config).
+model_path: /project/khanhnt/SocialNav/checkpoints/SocialNav-Qwen2.5-VL-SAFE-GRPO
+device: cuda:0
+flow_steps: 5
+step_scale: 1.0
+execute_first_waypoint: true
+max_target_dist: null
+arrive_radius: 0.5

@@ -1,0 +1,21 @@
+{
+ "split": "test",
+ "sft_records": 1078,
+ "eval_records": 1078,
+ "arrive": 31,
+ "cat_action_target_mismatch": 162,
+ "cat_crossing": 185,
+ "cat_crowd": 460,
+ "cat_other": 454,
+ "cat_person_close_by": 213,
+ "cat_turn": 155,
+ "condition_normal": 165,
+ "condition_original": 134,
+ "condition_rush": 779,
+ "episodes": 32,
+ "fallback_closest_safe": 27,
+ "interaction": 384,
+ "samples_episode_stuck": 1,
+ "samples_ok": 1078,
+ "samples_overlap": 80
+}

@@ -1,0 +1,70 @@
+seeds=[0, 1, 2] tasks=15 runs=normal/s0:15, normal/s1:15, normal/s2:15, original/s0:15, original/s1:15, original/s2:15, rush/s0:15, rush/s1:15, rush/s2:15
+
+mean over tasks x seeds, 95% CI (two-stage bootstrap, B=10000)
+metric                                         original                     normal                       rush
+SR                               0.978 [ 0.911,  1.000]     0.933 [ 0.822,  1.000]     0.978 [ 0.911,  1.000]
+SR_new                           0.533 [ 0.333,  0.733]     0.444 [ 0.222,  0.667]     0.511 [ 0.311,  0.711]
+SPL_new                          0.430 [ 0.256,  0.603]     0.362 [ 0.188,  0.541]     0.415 [ 0.253,  0.582]
+SR_social                        0.533 [ 0.311,  0.733]     0.222 [ 0.044,  0.422]     0.067 [ 0.000,  0.178]
+static_collisions/task           6.333 [ 2.844, 10.356]     6.889 [ 3.133, 11.689]     5.289 [ 2.489,  8.667]
+human_collisions/task            0.000 [ 0.000,  0.000]     1.667 [ 0.911,  2.511]    12.378 [ 8.400, 16.444]
+tasks_with_human_collision       0.000 [ 0.000,  0.000]     0.578 [ 0.356,  0.778]     0.911 [ 0.778,  1.000]
+human_brushes/task               0.000 [ 0.000,  0.000]     2.956 [ 1.711,  4.489]    17.178 [11.867, 22.511]
+intrusion_ratio(<1.2m)           0.000 [ 0.000,  0.000]     0.091 [ 0.058,  0.127]     0.452 [ 0.368,  0.530]
+people_in_view_mean              0.000 [ 0.000,  0.000]     0.915 [ 0.759,  1.099]    11.292 [ 9.825, 12.815]
+steps                           48.289 [36.289, 60.601]    48.333 [35.778, 61.533]    49.644 [37.178, 62.400]
+travel/shortest                  1.399 [ 1.247,  1.623]     1.358 [ 1.226,  1.510]     1.390 [ 1.224,  1.595]
+final_dist                       0.440 [ 0.296,  0.790]     0.577 [ 0.310,  1.055]     0.375 [ 0.319,  0.454]
+stop_count/task                  0.356 [ 0.156,  0.600]     0.444 [ 0.178,  0.822]     0.511 [ 0.267,  0.822]
+heading_change_deg              19.973 [17.691, 22.137]    19.666 [17.287, 22.067]    19.913 [17.484, 22.232]
+gt_deviation_m                   1.694 [ 1.252,  2.199]     1.514 [ 1.090,  2.043]     1.486 [ 1.113,  1.948]
+
+per-seed means (seed order [0, 1, 2])
+SR_new                                   0.60/0.47/0.53             0.60/0.40/0.33             0.53/0.40/0.60
+SPL_new                                  0.52/0.35/0.43             0.52/0.31/0.26             0.45/0.27/0.52
+SR_social                                0.60/0.47/0.53             0.33/0.13/0.20             0.07/0.00/0.13
+human_collisions/task                    0.00/0.00/0.00             1.47/2.00/1.53          12.53/12.40/12.20
+static_collisions/task                   5.20/9.20/4.60             7.20/7.60/5.87             6.13/6.00/3.73
+steps                                 44.00/50.93/49.93          44.33/52.93/47.73          51.80/49.67/47.47
+
+paired difference vs original (same task, same seed), 95% CI
+  normal  SR_new                      -0.089 [-0.267,  0.089]
+  normal  SPL_new                     -0.068 [-0.211,  0.079]
+  normal  SR_social                   -0.311 [-0.533, -0.089]
+  normal  human_collisions/task        1.667 [ 0.911,  2.511]
+  normal  static_collisions/task       0.556 [-2.533,  3.822]
+  normal  steps                        0.044 [-5.445,  5.267]
+  normal  travel/shortest             -0.041 [-0.223,  0.082]
+  normal  stop_count/task              0.089 [-0.178,  0.378]
+  normal  gt_deviation_m              -0.181 [-0.527,  0.165]
+  rush    SR_new                      -0.022 [-0.200,  0.156]
+  rush    SPL_new                     -0.015 [-0.171,  0.143]
+  rush    SR_social                   -0.467 [-0.667, -0.267]
+  rush    human_collisions/task       12.378 [ 8.267, 16.400]
+  rush    static_collisions/task      -1.044 [-3.844,  1.756]
+  rush    steps                        1.356 [-5.467,  8.556]
+  rush    travel/shortest             -0.008 [-0.222,  0.186]
+  rush    stop_count/task              0.156 [-0.022,  0.400]
+  rush    gt_deviation_m              -0.208 [-0.608,  0.191]
+
+crowd-blind counterfactual: original path of the same seed replayed through the crowd
+  normal  collisions/step actual   0.034 [ 0.021,  0.050]   blind   0.027 [ 0.015,  0.040]   reduction -29.2% [-100.3%,  12.8%]   events 75 vs 58
+  rush    collisions/step actual   0.249 [ 0.205,  0.291]   blind   0.217 [ 0.170,  0.267]   reduction -15.0% [-36.6%,   3.3%]   events 557 vs 471
+
+per task (mean over seeds): success_new / human_collisions / steps
+task                    original                normal                  rush
+traj_0        0.67    0.0   35.7    0.67    0.0   44.0    1.00    8.0   41.0
+traj_1        1.00    0.0   10.0    1.00    0.0    9.7    1.00    1.0   11.7
+traj_2        1.00    0.0   24.3    1.00    0.0   13.3    1.00    1.7   13.3
+traj_3        0.67    0.0   32.3    1.00    2.7   37.3    0.67   14.7   52.0
+traj_4        0.67    0.0   29.7    0.00    0.0   26.7    0.33    0.3   23.3
+traj_5        0.67    0.0   64.0    0.67    2.0   60.3    0.00   23.3   94.0
+traj_6        1.00    0.0   30.0    0.67    2.0   28.3    0.67    8.3   29.0
+traj_7        0.33    0.0   28.3    0.33    0.7   30.7    0.67    5.3   26.7
+traj_8        0.33    0.0   61.0    0.00    1.3   54.0    0.33   18.7   50.0
+traj_9        1.00    0.0   37.7    0.67    1.3   39.7    0.67   16.0   52.0
+traj_10       0.00    0.0   86.3    0.00    2.3   88.3    0.33   19.3   78.3
+traj_11       0.00    0.0   72.7    0.00    3.7   72.0    0.00   20.0   74.0
+traj_12       0.00    0.0   73.0    0.33    3.7   54.7    0.00   14.0   58.3
+traj_13       0.33    0.0   66.3    0.33    3.0   74.3    0.33   12.0   70.0
+traj_14       0.33    0.0   73.0    0.00    2.3   91.7    0.67   23.0   71.0

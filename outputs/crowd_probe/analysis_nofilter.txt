@@ -1,0 +1,73 @@
+121 probe poses from 41 runs, 15 tasks; valid clean 121, objects visible @1.5 121, objects visible @3.0 121
+
+condition                        p_person                p_blocked                      ade               clear_gain             pass_through               pass_clean               first_step                    reach                noise_ade
+none                0.109 [ 0.057, 0.179]    0.381 [ 0.309, 0.467]                        -                        -                        -                        -                        -                        -    1.013 [ 0.921, 1.111]
+person@1.5          0.700 [ 0.605, 0.794]    0.372 [ 0.300, 0.445]    0.114 [ 0.092, 0.140]   -0.005 [-0.014, 0.002]    0.876 [ 0.840, 0.910]    0.872 [ 0.827, 0.907]    0.006 [-0.001, 0.013]    0.012 [-0.016, 0.040]                        -
+silhouette@1.5      0.662 [ 0.569, 0.748]    0.526 [ 0.463, 0.588]    0.106 [ 0.088, 0.127]    0.006 [-0.001, 0.012]    0.870 [ 0.821, 0.911]    0.872 [ 0.828, 0.906]   -0.007 [-0.013,-0.001]   -0.037 [-0.061,-0.014]                        -
+pillar@1.5          0.071 [ 0.038, 0.107]    0.467 [ 0.407, 0.535]    0.111 [ 0.097, 0.128]    0.012 [ 0.007, 0.018]    0.854 [ 0.801, 0.896]    0.872 [ 0.828, 0.909]   -0.007 [-0.012,-0.003]   -0.025 [-0.042,-0.008]                        -
+wall@1.5            0.058 [ 0.033, 0.092]    0.442 [ 0.398, 0.489]    0.287 [ 0.239, 0.334]    0.017 [ 0.007, 0.027]    0.928 [ 0.901, 0.953]    0.948 [ 0.924, 0.966]   -0.008 [-0.019, 0.003]   -0.124 [-0.164,-0.085]                        -
+person@3.0          0.614 [ 0.520, 0.692]    0.365 [ 0.293, 0.443]    0.076 [ 0.065, 0.087]   -0.005 [-0.015, 0.003]    0.682 [ 0.624, 0.736]    0.679 [ 0.621, 0.736]    0.004 [-0.001, 0.009]    0.008 [-0.005, 0.024]                        -
+silhouette@3.0      0.545 [ 0.442, 0.626]    0.419 [ 0.339, 0.502]    0.065 [ 0.051, 0.083]    0.017 [ 0.008, 0.028]    0.667 [ 0.609, 0.724]    0.679 [ 0.621, 0.736]   -0.004 [-0.007,-0.000]   -0.025 [-0.040,-0.009]                        -
+pillar@3.0          0.097 [ 0.056, 0.142]    0.404 [ 0.328, 0.489]    0.071 [ 0.061, 0.081]    0.020 [ 0.010, 0.032]    0.659 [ 0.593, 0.723]    0.679 [ 0.619, 0.737]   -0.005 [-0.009,-0.002]   -0.024 [-0.038,-0.009]                        -
+wall@3.0            0.076 [ 0.044, 0.110]    0.544 [ 0.486, 0.606]    0.156 [ 0.121, 0.198]    0.032 [ 0.016, 0.050]    0.871 [ 0.839, 0.904]    0.889 [ 0.863, 0.917]   -0.005 [-0.014, 0.002]   -0.059 [-0.082,-0.034]                        -
+blank                                   -                        -    0.362 [ 0.323, 0.401]                        -                        -                        -                        -                        -                        -
+swap                                    -                        -    0.415 [ 0.358, 0.480]                        -                        -                        -                        -                        -                        -
+goal_rot30                              -                        -    0.466 [ 0.440, 0.498]                        -                        -                        -                        -                        -                        -
+
+paired differences (same pose and noise)
+  person-pillar@1.5:p_person          0.629 [ 0.530, 0.731]
+  person-pillar@1.5:p_blocked        -0.095 [-0.132,-0.060]
+  person-pillar@1.5:ade               0.003 [-0.013, 0.018]
+  person-pillar@1.5:clear_gain       -0.017 [-0.029,-0.007]
+  person-pillar@1.5:pass_through      0.022 [-0.002, 0.054]
+  person-silhouette@1.5:p_person      0.038 [ 0.008, 0.069]
+  person-silhouette@1.5:p_blocked    -0.154 [-0.189,-0.117]
+  person-silhouette@1.5:ade           0.008 [-0.007, 0.026]
+  person-silhouette@1.5:clear_gain   -0.010 [-0.021,-0.002]
+  person-silhouette@1.5:pass_through  0.007 [-0.015, 0.035]
+  wall-pillar@1.5:p_person           -0.012 [-0.030, 0.001]
+  wall-pillar@1.5:p_blocked          -0.026 [-0.081, 0.026]
+  wall-pillar@1.5:ade                 0.176 [ 0.138, 0.210]
+  wall-pillar@1.5:clear_gain          0.005 [-0.002, 0.012]
+  wall-pillar@1.5:pass_through        0.074 [ 0.045, 0.106]
+  person-pillar@3.0:p_person          0.517 [ 0.425, 0.603]
+  person-pillar@3.0:p_blocked        -0.038 [-0.080,-0.006]
+  person-pillar@3.0:ade               0.005 [-0.004, 0.014]
+  person-pillar@3.0:clear_gain       -0.025 [-0.036,-0.016]
+  person-pillar@3.0:pass_through      0.023 [ 0.000, 0.050]
+  person-silhouette@3.0:p_person      0.069 [ 0.036, 0.102]
+  person-silhouette@3.0:p_blocked    -0.053 [-0.084,-0.028]
+  person-silhouette@3.0:ade           0.010 [-0.002, 0.020]
+  person-silhouette@3.0:clear_gain   -0.023 [-0.032,-0.014]
+  person-silhouette@3.0:pass_through  0.015 [-0.003, 0.037]
+  wall-pillar@3.0:p_person           -0.022 [-0.048,-0.001]
+  wall-pillar@3.0:p_blocked           0.140 [ 0.085, 0.190]
+  wall-pillar@3.0:ade                 0.085 [ 0.055, 0.122]
+  wall-pillar@3.0:clear_gain          0.012 [-0.002, 0.025]
+  wall-pillar@3.0:pass_through        0.212 [ 0.170, 0.259]
+
+linear probe on the action feature (5-fold grouped by task; null = 20 within-pose label swaps)
+  person@1.5 vs none                   balanced acc 0.729   null mean 0.503 p95 0.551  (n=236)
+  silhouette@1.5 vs none               balanced acc 0.682   null mean 0.499 p95 0.539  (n=236)
+  pillar@1.5 vs none                   balanced acc 0.712   null mean 0.503 p95 0.547  (n=236)
+  wall@1.5 vs none                     balanced acc 0.831   null mean 0.497 p95 0.521  (n=236)
+  person@1.5 vs pillar@1.5             balanced acc 0.774   null mean 0.487 p95 0.543  (n=230)
+  person@1.5 vs silhouette@1.5         balanced acc 0.648   null mean 0.498 p95 0.531  (n=230)
+  person@3.0 vs none                   balanced acc 0.652   null mean 0.501 p95 0.549  (n=220)
+  silhouette@3.0 vs none               balanced acc 0.647   null mean 0.500 p95 0.537  (n=220)
+  pillar@3.0 vs none                   balanced acc 0.590   null mean 0.495 p95 0.528  (n=220)
+  wall@3.0 vs none                     balanced acc 0.759   null mean 0.511 p95 0.551  (n=220)
+  person@3.0 vs pillar@3.0             balanced acc 0.677   null mean 0.492 p95 0.521  (n=198)
+  person@3.0 vs silhouette@3.0         balanced acc 0.631   null mean 0.503 p95 0.537  (n=198)
+
+relative feature change |f(cond) - f(none)| / |f(swap) - f(none)| (median over poses)
+  person@1.5       0.393
+  silhouette@1.5   0.369
+  pillar@1.5       0.375
+  wall@1.5         0.715
+  person@3.0       0.290
+  silhouette@3.0   0.244
+  pillar@3.0       0.278
+  wall@3.0         0.484
+  blank            1.093
+  goal_rot30       1.050

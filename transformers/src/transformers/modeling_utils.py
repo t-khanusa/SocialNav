@@ -5062,20 +5062,27 @@ class PreTrainedModel(nn.Module, EmbeddingAccessMixin, ModuleUtilsMixin, PushToH
                 weights_only=weights_only,
             )
         # gyn
-        if getattr(model, "graph_encoder", None) is not None:
+        # Only (re)initialize the SocialNav heads the checkpoint does not provide, so that
+        # loading a trained SocialNav checkpoint keeps their weights.
+        def _not_loaded(prefix):
+            if not from_pt:
+                return True
+            return any(k == prefix or k.startswith(prefix + ".") for k in missing_keys)
+
+        if getattr(model, "graph_encoder", None) is not None and _not_loaded("graph_encoder"):
             graph_encoder_model = model.graph_encoder
             for m in graph_encoder_model.modules():
                 if hasattr(m, 'reset_parameters'):
                     m.reset_parameters()
 
-        if getattr(model, "query_action", None) is not None: # gyn
+        if getattr(model, "query_action", None) is not None and _not_loaded("query_action"): # gyn
             # 重新分配，按model的参数dtype和device
             dtype = next(model.parameters()).dtype  # 获取当前模型dtype
             device = next(model.parameters()).device
             model.query_action = nn.Parameter(
                 torch.randn(model.query_action.shape, dtype=dtype, device=device)
             )
-        if getattr(model, "query_multihead_attn", None) is not None:
+        if getattr(model, "query_multihead_attn", None) is not None and _not_loaded("query_multihead_attn"):
             attn_mod = model.query_multihead_attn
             for name, p in attn_mod.named_parameters():
                 if "weight" in name:
@@ -5083,7 +5090,7 @@ class PreTrainedModel(nn.Module, EmbeddingAccessMixin, ModuleUtilsMixin, PushToH
                 elif "bias" in name:
                     p.data.zero_()
 
-        if getattr(model, "query_multihead_multi_attn", None) is not None:
+        if getattr(model, "query_multihead_multi_attn", None) is not None and _not_loaded("query_multihead_multi_attn"):
             module = model.query_multihead_multi_attn
             for m in module.modules():
                 if isinstance(m, nn.Linear):
@@ -5101,7 +5108,7 @@ class PreTrainedModel(nn.Module, EmbeddingAccessMixin, ModuleUtilsMixin, PushToH
                             nn.init.xavier_uniform_(param)
                         elif 'bias' in name:
                             nn.init.zeros_(param)        
-        if getattr(model, "flow_matching_model", None) is not None:
+        if getattr(model, "flow_matching_model", None) is not None and _not_loaded("flow_matching_model.velocity_predictor"):
             module = model.flow_matching_model.velocity_predictor
             module._init_weights(module)
         # # === init ablation MLP heads (for debug overfitting) ===

@@ -1,0 +1,199 @@
+{
+ "split": "test",
+ "episodes": {
+  "all": {
+   "episodes": 32,
+   "people": 57.5625,
+   "success": 0.96875,
+   "reasons": {
+    "arrived": 31,
+    "stuck": 1,
+    "max_steps": 0
+   },
+   "speed": 0.8851867934192881,
+   "stop_fraction": 0.04266132765551388,
+   "fallback_fraction": 0.050614775979734045,
+   "contacts_per_episode": {
+    "frontal": 1.34375,
+    "beside_or_behind": 0.90625,
+    "unseen": 2.59375
+   },
+   "min_static_clearance": 0.35950225591659546,
+   "people_in_view": 11.412931359074785,
+   "steps": 1203
+  },
+  "normal": {
+   "episodes": 4,
+   "people": 6.75,
+   "success": 1.0,
+   "reasons": {
+    "arrived": 4,
+    "stuck": 0,
+    "max_steps": 0
+   },
+   "speed": 0.9928979238608897,
+   "stop_fraction": 0.004166666666666667,
+   "fallback_fraction": 0.0,
+   "contacts_per_episode": {
+    "frontal": 0.0,
+    "beside_or_behind": 0.0,
+    "unseen": 0.0
+   },
+   "min_static_clearance": 0.5194450616836548,
+   "people_in_view": 1.1717040914726546,
+   "steps": 165
+  },
+  "original": {
+   "episodes": 4,
+   "people": 0.0,
+   "success": 1.0,
+   "reasons": {
+    "arrived": 4,
+    "stuck": 0,
+    "max_steps": 0
+   },
+   "speed": 0.9933409819356844,
+   "stop_fraction": 0.006756756756756757,
+   "fallback_fraction": 0.0,
+   "contacts_per_episode": {
+    "frontal": 0.0,
+    "beside_or_behind": 0.0,
+    "unseen": 0.0
+   },
+   "min_static_clearance": 0.6595340371131897,
+   "people_in_view": 0.0,
+   "steps": 134
+  },
+  "rush 0.00-0.10": {
+   "episodes": 8,
+   "people": 44.125,
+   "success": 1.0,
+   "reasons": {
+    "arrived": 8,
+    "stuck": 0,
+    "max_steps": 0
+   },
+   "speed": 0.9150396787465822,
+   "stop_fraction": 0.034802134579989555,
+   "fallback_fraction": 0.0499571226795803,
+   "contacts_per_episode": {
+    "frontal": 2.25,
+    "beside_or_behind": 2.25,
+    "unseen": 3.375
+   },
+   "min_static_clearance": 0.35950225591659546,
+   "people_in_view": 8.730269084417975,
+   "steps": 322
+  },
+  "rush 0.10-0.17": {
+   "episodes": 6,
+   "people": 77.0,
+   "success": 1.0,
+   "reasons": {
+    "arrived": 6,
+    "stuck": 0,
+    "max_steps": 0
+   },
+   "speed": 0.8475255107925418,
+   "stop_fraction": 0.06535321895173883,
+   "fallback_fraction": 0.027486157770312308,
+   "contacts_per_episode": {
+    "frontal": 0.5,
+    "beside_or_behind": 0.5,
+    "unseen": 3.6666666666666665
+   },
+   "min_static_clearance": 0.35967764258384705,
+   "people_in_view": 12.286681437367328,
+   "steps": 267
+  },
+  "rush 0.17-0.26": {
+   "episodes": 10,
+   "people": 100.0,
+   "success": 0.9,
+   "reasons": {
+    "arrived": 9,
+    "stuck": 1,
+    "max_steps": 0
+   },
+   "speed": 0.7975551271503013,
+   "stop_fraction": 0.06509324009324009,
+   "fallback_fraction": 0.10550989032929733,
+   "contacts_per_episode": {
+    "frontal": 2.2,
+    "beside_or_behind": 0.8,
+    "unseen": 3.4
+   },
+   "min_static_clearance": 0.3993642330169678,
+   "people_in_view": 21.696474582495473,
+   "steps": 315
+  }
+ },
+ "labels": {
+  "waypoint_step_m": {
+   "max": 1.0000065549467752,
+   "mean": 0.91032868936791,
+   "over_1m": 0
+  },
+  "replan_jitter_m": {
+   "mean": 0.37847074248257406,
+   "p95": 1.3575004036283067
+  },
+  "waypoint_clearance_m": {
+   "min": 0.35950225591659546,
+   "below_robot_clearance": 0,
+   "p5": 0.4997674822807312
+  },
+  "plan_to_seen_people_m": {
+   "samples": 1038,
+   "median_by_waypoint": [
+    2.007,
+    2.024,
+    2.042,
+    2.076,
+    2.084
+   ],
+   "below_contact_by_waypoint": [
+    0.0125,
+    0.0154,
+    0.0973,
+    0.1204,
+    0.1329
+   ],
+   "below_safe_by_waypoint": [
+    0.025,
+    0.0279,
+    0.1243,
+    0.1503,
+    0.158
+   ],
+   "ahead_below_contact_by_waypoint": [
+    0.01,
+    0.013,
+    0.0829,
+    0.1029,
+    0.1179
+   ]
+  }
+ },
+ "samples": {
+  "split": "test",
+  "sft_records": 1078,
+  "eval_records": 1078,
+  "arrive": 31,
+  "cat_action_target_mismatch": 162,
+  "cat_crossing": 185,
+  "cat_crowd": 460,
+  "cat_other": 454,
+  "cat_person_close_by": 213,
+  "cat_turn": 155,
+  "condition_normal": 165,
+  "condition_original": 134,
+  "condition_rush": 779,
+  "episodes": 32,
+  "fallback_closest_safe": 27,
+  "interaction": 384,
+  "samples_episode_stuck": 1,
+  "samples_ok": 1078,
+  "samples_overlap": 80
+ }
+}

@@ -32,6 +32,9 @@ def parse_args():
     p.add_argument("--device", default="cuda:0")
     p.add_argument("--flow-steps", type=int, default=5, help="Euler steps used by the action expert.")
     p.add_argument("--limit", type=int, default=None, help="Only evaluate the first N samples.")
+    p.add_argument("--seed", type=int, default=None,
+                   help="Seed the flow-matching noise of sample i with seed + i, so that two runs on "
+                        "variants of the same file draw the same noise per sample.")
     return p.parse_args()
 
 
@@ -249,6 +252,8 @@ def main():
     for idx, item in progress_bar:
         try:
             t0 = time.time()
+            if args.seed is not None:
+                torch.manual_seed(args.seed + idx)
             wp_pred_rel, arrive_logit = model.infer_one(item)
             t1 = time.time()
 
